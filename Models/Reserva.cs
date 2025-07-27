@@ -50,13 +50,16 @@ namespace DesafioProjetoHospedagem.Models
             // TODO: Retorna o valor da diária
             // Cálculo: DiasReservados X Suite.ValorDiaria
             // *IMPLEMENTE AQUI*
-            decimal valor = 0;
+            Console.WriteLine("Calculando valor da diária..");
+            decimal valor = DiasReservados * Suite.ValorDiaria;
 
             // Regra: Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10%
             // *IMPLEMENTE AQUI*
-            if (true)
+            if (DiasReservados>=10)
             {
-                valor = 0;
+                Console.WriteLine("Parabéns, pelo tempo que passou em nossa suíte você ganhará um desconto de 10%");
+                double desconto = .10; //O que seria melhor definir como 90% ou 10%
+                valor -= valor *(decimal) desconto;
             }
 
             return valor;
