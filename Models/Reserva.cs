@@ -1,3 +1,5 @@
+using DesafioProjetoHospedagem.Exceptions;
+
 namespace DesafioProjetoHospedagem.Models
 {
     public class Reserva
@@ -17,14 +19,17 @@ namespace DesafioProjetoHospedagem.Models
         {
             // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
             // *IMPLEMENTE AQUI*
-            if (true)
+            Console.WriteLine("Verificando capacidade da suíte");
+            if (Suite.Capacidade >= hospedes.Count)
             {
                 Hospedes = hospedes;
+                Console.WriteLine("Hospodes cadastrados com sucesso!");
             }
             else
             {
                 // TODO: Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
                 // *IMPLEMENTE AQUI*
+                throw new CapacityViolationException("Violção de capacidade detectada. Não há espaçao suficente para a quantidade de hospede");
             }
         }
 
